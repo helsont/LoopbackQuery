@@ -18,9 +18,9 @@ public class WhereSerializer implements JsonSerializer<Where> {
         if(src.or != null && src.or.length > 0) {
             JsonObject val = new JsonObject();
             for(int i = 0; i < src.or.length; i++) {
-                Object value = src.or[i].getValue();
-                JsonObject result = getJsonObject(value);
-                val.add();
+//                Object value = src.or[i].getValue();
+//                JsonObject result = getJsonObject(value);
+//                val.add();
 
             }
             object.add("or", val);
@@ -33,22 +33,23 @@ public class WhereSerializer implements JsonSerializer<Where> {
         if(value instanceof Query.Value) {
             Query.Value query = (Query.Value) value;
 
-        } else if(value instanceof String){
-            String field =
+        } else if(value instanceof String) {
+//            String field =
         } else {
             throw new IllegalArgumentException();
         }
+        return null;
     }
 
-    private JsonObject getValues(Query.Value[] values) {
-        for(int i = 0; i < values.length; i++) {
-
-        }
-    }
+//    private JsonObject getValues(Query.Value[] values) {
+//        for(int i = 0; i < values.length; i++) {
+//
+//        }
+//    }
 
     private JsonObject getValue(Query.Value value) {
-        JsonObject obj = new JsonObject();
-        obj.add(value.field, getJsonObject(value.getValue()));
-        return obj;
+//        JsonObject obj = new JsonObject();
+//        obj.add(value.field, getJsonObject(value.getValue()));
+        return null;
     }
 }

@@ -1,23 +1,11 @@
 package swipes.loopbackquery;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 public class Test {
 
     static int DEFAULT = 0, NAME_SEARCH = 1, CATEGORY = 2, BOTH = 3;
 
     static int offset = 40;
     static int QUERY_LIMIT = 20;
-
-    private static void setUpGson() {
-        GsonBuilder builder = new GsonBuilder()
-                .registerTypeAdapter(Where.class, new WhereSerializer())
-                .registerTypeAdapter(Query.Value.class, new ValueSerializer())
-                .setPrettyPrinting();
-        Gson gson = builder.create();
-        Query.setGson(gson);
-    }
 
     private static void test(int q) {
         Query.Builder builder = new Query.Builder().filter(new Filter.FilterBuilder()
@@ -62,7 +50,7 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        setUpGson();
+        LoopbackQuery.get();
 //        test(BOTH);
         test2();
     }

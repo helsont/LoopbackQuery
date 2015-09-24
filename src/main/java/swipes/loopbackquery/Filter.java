@@ -9,8 +9,8 @@ public class Filter extends FieldsQuery<Filter> {
     public Where where;
     public Include[] include;
     public String order;
-    public int offset;
-    public int limit;
+    public Integer offset;
+    public Integer limit;
 
     private Filter() { }
 

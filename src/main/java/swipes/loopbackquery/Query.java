@@ -87,8 +87,6 @@ public class Query {
 
         public Value(String field, Value...values) {
             this();
-
-
         }
     }
 }
